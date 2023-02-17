@@ -7,20 +7,31 @@ let users = [
     { name: 'Albert', age: 76, occupation: 'programmer' },
 ]
 
-/* 
-You can now filter the array of objects using the age to return a new array 
-whose age is greater than 40 and whose occupation is equal to programmer:
-*/
+// You can now filter the array of objects using the age to return a new array 
+// whose age is greater than 40 and whose occupation is equal to programmer:
 
 
-/*
-Solution 1 
-*/
+// Solution 1 
 
-let filteredUsers = [];
+let filteredUsersOne = [];
 for (let i= 0; i<users.length; i++) {
     if (users[i].age > 40 && users[i].occupation === 'programmer' ) {
-        filteredUsers = [...filteredUsers, users[i]];
+        filteredUsersOne = [...filteredUsersOne, users[i]];
     }
 }
-console.log(filteredUsers);
+console.log("Solution 1: ",filteredUsersOne);
+
+
+// Solution 2
+
+
+let filteredUsers = users.filter(user => user.age > 40 && user.occupation === 'programmer');
+console.log(filteredUsers); // same result as first solution
+
+//Bonus
+
+let filteredUserNames = users.filter(user => user.age > 40 && user.occupation === 'programmer')
+    .sort((a, b) => a.age - b.age)
+    .map(user => user.name);
+
+console.log(filteredUserNames); // ['Anna', 'Lenny', 'Albert']
