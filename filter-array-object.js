@@ -26,7 +26,7 @@ console.log("Solution 1: ",filteredUsersOne);
 
 
 let filteredUsers = users.filter(user => user.age > 40 && user.occupation === 'programmer');
-console.log(filteredUsers); // same result as first solution
+console.log("Solution 2: ",filteredUsers); // same result as first solution
 
 //Bonus
 
@@ -34,4 +34,4 @@ let filteredUserNames = users.filter(user => user.age > 40 && user.occupation ==
     .sort((a, b) => a.age - b.age)
     .map(user => user.name);
 
-console.log(filteredUserNames); // ['Anna', 'Lenny', 'Albert']
+console.log("Only names: ",filteredUserNames); // ['Anna', 'Lenny', 'Albert']
